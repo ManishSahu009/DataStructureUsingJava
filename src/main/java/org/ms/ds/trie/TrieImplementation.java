@@ -1,4 +1,4 @@
-package com.ms.trie;
+package org.ms.ds.trie;
 
 import java.util.HashMap;
 import java.util.Map;
