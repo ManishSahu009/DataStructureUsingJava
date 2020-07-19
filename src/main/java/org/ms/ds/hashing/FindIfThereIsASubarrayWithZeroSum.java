@@ -1,4 +1,4 @@
-package org.ms.ds.array;
+package org.ms.ds.hashing;
 
 /*
 
