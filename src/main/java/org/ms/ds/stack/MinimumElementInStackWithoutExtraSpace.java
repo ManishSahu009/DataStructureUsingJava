@@ -31,7 +31,7 @@ class MinStackWithoutExtraSpace {
     Stack<Integer> stack = new Stack();
     int min = -1;
 
-    //while popping we will check with popped element is lower than min means its not actual value but a flag so we will return
+    //while popping we will check with popped element is lower than minEle means its not actual value but a flag so we will return min instead and calculate min again using  2*min-stack.pop()
     int pop() {
         if (stack.size() == 0) {
             return -1;
@@ -62,6 +62,7 @@ class MinStackWithoutExtraSpace {
         }
     }
 
+    //will push flaged values instead of correct minimum
     void push(int ele) {
         if (stack.size() == 0) {
             stack.push(ele);

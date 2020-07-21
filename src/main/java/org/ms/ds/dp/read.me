@@ -1,0 +1,92 @@
+Q: what is dynamic programming and how to identify question on same?
+DP = Recursion + Storage
+dynamic programming is nothing but a enhanced recursion so recursion is parent for DP.
+Identify : we will get 2 option always
+1. will get choice
+2. will ask for optimized solution (maximum/minimum/largest/smallest)
+
+Q: how to write dynamic programming?
+recursion -> memoization(bottom up) -> top down approach
+
+Q: type of knapsack
+1. Fractional knapsack ( greedy )
+   Input :
+   Items : I1   I2  I3  I4
+   Value : v1   v2  v3  v4 (price)
+   Weight: W1   W2  W3  W4
+   Capacity : C (where W can never be greater than C)
+   in fractional knapsack we can consider partial item (break item as per remaining capacity)
+   pick item(s) to maximize the profile
+2. 0-1 knapsack (dp) : here
+   Input :
+   Items : I1   I2  I3  I4
+   Value : v1   v2  v3  v4 (price)
+   Weight: W1   W2  W3  W4
+   Capacity : C (where W can never be greater than C)
+   in 0-1 knapsack either we take some item or we discard (can not break) and also item will not be duplicate means you can keep only one instance of any item.
+   pick item(s) to maximize the profile
+
+3. Unbounded knapsack (dp)
+   Input :
+   Items : I1   I2  I3  I4
+   Value : v1   v2  v3  v4 (price)
+   Weight: W1   W2  W3  W4
+   Capacity : C (where W can never be greater than C)
+   in unbounded knapsack either we take some item or we discard (can not break) and also item can be duplicate means you can keep any no. of instance of any item.
+   if we reject something then mark that as processded but if select something then it can be reselect again(not processed).
+   pick item(s) to maximize the profile
+
+Q: List of DP parent questions?
+1. 0-1 knapsack problem
+    a. subset sum partition
+    b. Equal sum partition
+    c. Count of subset sum
+    d. Minimum subset sum diff
+    e. Target sum
+    f. No. of subset and given diff
+2. unbounded knapsack problem
+    a. rod cutting
+    b. coin change problem : maximum number of ways
+    c. coin change problem : minimum number of coins
+3. Fibonacci
+4. LCS (longest common subsuquence)
+    a. Longest common subsuquence
+    b. Longest common substring
+    c. Print Longest common substring
+    d. Print Longest common subsuquence
+    e. Shortest common supersequence
+    f. Minimum number of insertion/Deletion to convert string A to string B
+    g. Longest palindromic subsequence
+    i. minimum number of deletion in a string to make it a palindrome
+    j. Print shortest common super sequence
+    k. Longest repeating subsequence
+    l. Sequence pattern matching
+    m. minimum number of insertion in a astring to make it a palindrome
+
+5. LIS
+6. Kadane's algorithm
+7. Matrix chain multiplication
+    a. MCM
+    b. Printing MCM
+    c. Palindrome partition
+    d. Evaluate expression to true boolean parenthesization
+    e. Scrumbled string
+    f. Egg dropping problem
+
+8. DP on trees
+    a. Diameter of binary tree
+    b. Maximum path sum - Any node to any node
+    c. Maximum path sum - Leaf node to Leaf node
+
+9. DP on grid
+10. Others
+
+Q: How to think about base condition of recursion?
+base condition -> think of the smallest valid condition or largest invalid input
+
+Q: how to choose dimension in top down approach?
+choose variables whose values change in recursion as dimension
+
+Q: diff b/w substring and subsequence?
+substring -> should be continues always
+substring -> need not to be continues and can be discontinues also
