@@ -23,6 +23,23 @@ public class InOrderTraversal {
     }
 
     public static void inorderTraversalIterative(Node<Integer> root) {
+        if(root == null){
+            return;
+        }
+        Stack<Node<Integer>> stack=new Stack<>();
+        while (true){
+            if(root!=null){
+                stack.push(root);
+                root=root.left;
+            }else{
+                if(stack.isEmpty()){
+                    break;
+                }
+                root=stack.pop();
+                System.out.print(root.data + " ");
+                root=root.right;
+            }
+        }
 
     }
 
@@ -34,7 +51,9 @@ public class InOrderTraversal {
         root.left.right = new Node<>(12);
         root.right.left = new Node<>(16);
         root.right.right = new Node<>(25);
-
+        inorderTraversalRecursion(root);
+        System.out.println();
+        inorderTraversalIterative(root);
     }
 
 
