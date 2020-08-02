@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class Node<T> {
       T data;
+      Integer horizontalDistance=0;
       Node left;
       Node right;
 

@@ -10,14 +10,16 @@ package org.ms.ds.tree;
                            7     8
  */
 
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 import java.util.TreeMap;
 
 public class TopViewOfBinaryTree {
 
 
 
-    public static void printTopView(Node<Integer> root, int level, int hdist, Map<Integer,Pair<Integer,Integer>> map) {
+    private static void printTopView(Node<Integer> root, int level, int hdist, Map<Integer,Pair<Integer,Integer>> map) {
 
         if(root == null){
             return;
@@ -30,12 +32,41 @@ public class TopViewOfBinaryTree {
 
     }
 
-    public static void printTopView(Node<Integer> root) {
+    public static void printTopViewRecursion(Node<Integer> root) {
        Map<Integer,Pair<Integer,Integer>> map=new TreeMap<>();
        printTopView(root,0,0,map);
        map.forEach((k,v) -> System.out.println(k + "--->" + v.first));
 
     }
+
+    public static void printTopViewIterative(Node<Integer> root){
+
+        if(root ==  null){
+            return;
+        }
+        Map<Integer,Integer> map=new TreeMap<>();
+        Queue<Node> queue=new LinkedList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            Node<Integer> temp=queue.poll();
+            int hd=temp.horizontalDistance;
+            if(!map.containsKey(hd)) {
+                map.put(hd, temp.data);
+            }
+
+            if(temp.left !=null){
+                temp.left.horizontalDistance=hd-1;
+                queue.offer(temp.left);
+            }
+            if(temp.right !=null){
+                temp.right.horizontalDistance=hd+1;
+                queue.offer(temp.right);
+            }
+        }
+        System.out.println(map.values());
+
+    }
+
 
 
     public static void main(String[] args) {
@@ -47,6 +78,7 @@ public class TopViewOfBinaryTree {
         root.right.right = new Node<>(6);
         root.right.left.left = new Node<>(7);
         root.right.left.right = new Node<>(8);
-        printTopView(root);
+        printTopViewRecursion(root);
+        printTopViewIterative(root);
     }
 }

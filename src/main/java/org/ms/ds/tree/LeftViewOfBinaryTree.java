@@ -34,6 +34,8 @@ public class LeftViewOfBinaryTree {
         map.forEach((k,v)->System.out.print(v+" "));
     }
 
+
+
     public static void printLeftViewUsingIterative(Node<Integer> root) {
         List<List<Node<Integer>>> result=new ArrayList<>();
         Queue<Node<Integer>> queue=new LinkedList<>();
@@ -78,6 +80,8 @@ public class LeftViewOfBinaryTree {
         printLeftViewUsingRecursion(root);
         System.out.println();
         printLeftViewUsingIterative(root);
+        System.out.println();
+
 
     }
 }
