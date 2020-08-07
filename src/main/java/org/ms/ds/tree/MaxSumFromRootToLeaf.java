@@ -18,36 +18,28 @@ package org.ms.ds.tree;
 
  */
 
-import java.util.Stack;
+import java.util.concurrent.atomic.AtomicInteger;
 
-public class PrintAllPathRootToLeaf {
+public class MaxSumFromRootToLeaf {
 
-    public static void printAllPathRootToLeaf(Node<Integer> root , Stack<Node<Integer>> stack){
-       if(root == null)
+    private static void getMaxSumFromRootToLeaf(Node<Integer> root, AtomicInteger maxSum,int tempSum) {
+
+        if(root == null){
+            return;
+        }
+        if(root.left ==null && root.right==null && (tempSum+root.data > maxSum.get())){
+           maxSum.set(tempSum+root.data);
            return;
-
-       stack.push(root);
-
-       if(root.left==null && root.right==null){
-           stack.forEach(e -> System.out.print("->"+e.data));
-           System.out.println();
-       }
-
-       printAllPathRootToLeaf(root.left,stack);
-       printAllPathRootToLeaf(root.right,stack);
-       stack.pop();
-
-    }
-
-    public static void printAllPathRootToLeaf(Node<Integer> root){
-        Stack<Node<Integer>> stack=new Stack<>();
-        printAllPathRootToLeaf(root,stack);
+        }
+        getMaxSumFromRootToLeaf(root.left,maxSum,tempSum+root.data);
+        getMaxSumFromRootToLeaf(root.right,maxSum,tempSum+root.data);
     }
 
 
     public static void main(String[] args)
     {
-
+        AtomicInteger maxSum=new AtomicInteger(0);
+        int tmpSum=0;
         Node<Integer> root = new Node<>(1);
         root.left = new Node<>(2);
         root.right = new Node<>(3);
@@ -57,7 +49,9 @@ public class PrintAllPathRootToLeaf {
         root.right.left.right = new Node<>(8);
         root.right.left.right.left = new Node<>(9);
         root.right.left.right.right = new Node<>(10);
-        printAllPathRootToLeaf(root);
+        getMaxSumFromRootToLeaf(root,maxSum,tmpSum);
+        System.out.println("MaxSumFromRootToLeaf "+maxSum.get());
     }
+
 
 }

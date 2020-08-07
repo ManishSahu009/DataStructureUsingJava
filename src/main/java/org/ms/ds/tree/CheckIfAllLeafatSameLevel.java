@@ -2,6 +2,15 @@ package org.ms.ds.tree;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+  /* Construct below tree
+		          1
+		        /   \
+		       /     \
+		      2       3
+		     / \     /
+		    4   5   6
+	    */
+
 public class CheckIfAllLeafatSameLevel {
 
     private static boolean checkAllLevelAtSameLevel(Node<Integer> root, AtomicInteger levelOfLeaf, int level) {

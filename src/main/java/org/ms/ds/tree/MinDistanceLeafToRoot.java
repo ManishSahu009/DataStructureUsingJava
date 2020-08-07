@@ -18,32 +18,19 @@ package org.ms.ds.tree;
 
  */
 
-import java.util.Stack;
+public class MinDistanceLeafToRoot {
 
-public class PrintAllPathRootToLeaf {
+    private static int getMinDistanceLeafToRoot(Node<Integer> root) {
 
-    public static void printAllPathRootToLeaf(Node<Integer> root , Stack<Node<Integer>> stack){
-       if(root == null)
-           return;
+        if(root == null)
+            return 0;
 
-       stack.push(root);
-
-       if(root.left==null && root.right==null){
-           stack.forEach(e -> System.out.print("->"+e.data));
-           System.out.println();
-       }
-
-       printAllPathRootToLeaf(root.left,stack);
-       printAllPathRootToLeaf(root.right,stack);
-       stack.pop();
+        if(root.left==null && root.right==null){
+            return 0;
+        }
+        return 1 + Math.min(getMinDistanceLeafToRoot(root.left),getMinDistanceLeafToRoot(root.right));
 
     }
-
-    public static void printAllPathRootToLeaf(Node<Integer> root){
-        Stack<Node<Integer>> stack=new Stack<>();
-        printAllPathRootToLeaf(root,stack);
-    }
-
 
     public static void main(String[] args)
     {
@@ -57,7 +44,8 @@ public class PrintAllPathRootToLeaf {
         root.right.left.right = new Node<>(8);
         root.right.left.right.left = new Node<>(9);
         root.right.left.right.right = new Node<>(10);
-        printAllPathRootToLeaf(root);
+        System.out.println(getMinDistanceLeafToRoot(root));
     }
+
 
 }
