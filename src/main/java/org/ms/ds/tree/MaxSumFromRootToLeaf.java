@@ -31,8 +31,8 @@ public class MaxSumFromRootToLeaf {
            maxSum.set(tempSum+root.data);
            return;
         }
-        getMaxSumFromRootToLeaf(root.left,maxSum,tempSum+root.data);
-        getMaxSumFromRootToLeaf(root.right,maxSum,tempSum+root.data);
+        getMaxSumFromRootToLeaf(root.left,maxSum,tempSum + root.data);
+        getMaxSumFromRootToLeaf(root.right,maxSum,tempSum + root.data);
     }
 
 
