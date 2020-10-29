@@ -5,12 +5,18 @@ import lombok.Data;
 @Data
 public class LinkedListNode<T> {
 
-    private T data;
-    private LinkedListNode<T> next;
+    public T data;
+    public LinkedListNode<T> next;
+    public LinkedListNode<T> random;
+    public LinkedListNode<T> down;
 
     public LinkedListNode(T data) {
         this.data = data;
     }
+
+    public LinkedListNode() {
+    }
+
 
     public T getData() {
         return data;
@@ -27,4 +33,5 @@ public class LinkedListNode<T> {
     public void setNext(LinkedListNode<T> next) {
         this.next = next;
     }
+
 }

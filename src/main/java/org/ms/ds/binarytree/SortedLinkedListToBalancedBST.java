@@ -2,6 +2,10 @@ package org.ms.ds.binarytree;
 
 
 /*
+******Important:: Have a look on this example also *********************
+if ask is to convert doubly linked list to binary tree then use node->next as tree right and node->prev as tree left
+https://www.techiedelight.com/construct-height-balanced-bst-from-sorted-doubly-linked-list/
+
 https://javabypatel.blogspot.com/2016/10/convert-sorted-linked-list-to-bst.html
 
 Get the middle node of the linked list and make it Root Node.

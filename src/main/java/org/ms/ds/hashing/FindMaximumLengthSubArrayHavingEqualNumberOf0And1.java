@@ -4,6 +4,10 @@ package org.ms.ds.hashing;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+https://www.techiedelight.com/find-maximum-length-sub-array-equal-number-0s-1s/
+
+ */
 class FindMaximumLengthSubArrayHavingEqualNumberOf0And1
 {
     public static void maxLenSubarray(int[] A)
@@ -16,7 +20,7 @@ class FindMaximumLengthSubArrayHavingEqualNumberOf0And1
         for (int i = 0; i < A.length; i++)
         {
             // sum of elements so far (replace 0 with -1)
-            sum += (A[i] == 0)? -1: 1;
+            sum += (A[i] == 0) ? -1: 1;
 
             if (map.containsKey(sum))
             {
