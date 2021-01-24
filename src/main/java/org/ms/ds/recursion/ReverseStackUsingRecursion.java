@@ -1,22 +1,22 @@
 package org.ms.ds.recursion;
 
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
 
-public class SortArrayUsingRecursion {
+//Without extra space
+public class ReverseStackUsingRecursion {
 
-    public static void sort(Stack<Integer> temp ){
-        if(temp.size() == 1)
+    public static void reverse(Stack<Integer> temp ){
+        if(temp.size()==1) {
+
             return;
+        }
         int tempVar=temp.pop();
-        sort(temp);
+        reverse(temp);
         insert(temp,tempVar);
     }
 
     static void insert(Stack<Integer> temp,Integer tempvar){
-        if(temp.size() == 0 || temp.peek() <= tempvar){
+        if(temp.empty()){
             temp.push(tempvar);
             return;
         }
@@ -26,7 +26,7 @@ public class SortArrayUsingRecursion {
     }
 
     public static void main(String[] args) {
-       Stack<Integer> eles=new Stack<>();
+        Stack<Integer> eles = new Stack<>();
         eles.push(33);
         eles.push(3);
         eles.push(10);
@@ -35,9 +35,8 @@ public class SortArrayUsingRecursion {
         eles.push(9);
         eles.push(34);
         eles.push(42);
-        sort(eles);
-        eles.forEach(e-> System.out.println(e+" "));
+        reverse(eles);
+        eles.forEach(e -> System.out.println(e + " "));
     }
-
 
 }
