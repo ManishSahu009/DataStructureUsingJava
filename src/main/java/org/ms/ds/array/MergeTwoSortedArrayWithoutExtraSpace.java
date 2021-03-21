@@ -1,7 +1,9 @@
 package org.ms.ds.array;
 
 import java.util.Arrays;
+/*
 
+ */
 public class MergeTwoSortedArrayWithoutExtraSpace {
 
     public static void mergeArray(int []arr1, int []arr2){

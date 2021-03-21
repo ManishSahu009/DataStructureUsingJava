@@ -1,9 +1,12 @@
 package org.ms.ds.hashing;
 /*
 https://afteracademy.com/blog/longest-consecutive-sequence
+
+
  */
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -57,6 +60,38 @@ public class LongestConsecutiveSequence {
         return maxLen;
     }
 
+    //pepcoding logic
+    private static void findLongestConseqSubseq3(int[] arr) {
+        //Here boolean is indicating that ele is starting point of LCSS
+        HashMap<Integer, Boolean> map=new HashMap<>();
+        int maxLen = Integer.MIN_VALUE;
+        int startingPoint=0;
+        for(Integer ele:arr){
+            //put default true for all element considering they are the starting point for LCSS
+            map.put(ele,true);
+        }
+        for(Integer ele:arr){
+            if(map.containsKey(ele-1)){
+                map.put(ele,false);
+            }
+        }
+        for(Integer ele : arr){
+            if(map.get(ele) == true ){
+                int count = 1;
+                while(map.containsKey(ele+count)){
+                    count++;
+                }
+                if(count > maxLen){
+                    maxLen=count;
+                    startingPoint=ele;
+                }
+            }
+        }
+        for(int i=0 ; i<maxLen ; i++){
+            System.out.println(startingPoint+i + " ");
+        }
+    }
+
     public static void main(String args[])
     {
         int arr[] = { 1, 9, 3, 10, 4, 20, 2 };
@@ -68,6 +103,8 @@ public class LongestConsecutiveSequence {
         System.out.println(
                 "Length of the Longest consecutive subsequence 2 is "
                         + findLongestConseqSubseq2(arr));
+
+        findLongestConseqSubseq3(arr);
     }
 
 

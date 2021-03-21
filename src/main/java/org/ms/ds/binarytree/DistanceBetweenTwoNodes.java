@@ -22,7 +22,7 @@ https://www.geeksforgeeks.org/find-distance-between-two-nodes-of-a-binary-tree/
 
  */
 
-public class DistanceBetweenTwoNodes {
+public class  DistanceBetweenTwoNodes {
 
     private static TreeNode<Integer> findLCA(TreeNode<Integer> root, TreeNode<Integer> p1, TreeNode<Integer> p2){
         if(root == null){

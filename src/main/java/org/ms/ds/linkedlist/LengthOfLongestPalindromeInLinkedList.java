@@ -39,13 +39,13 @@ public class LengthOfLongestPalindromeInLinkedList {
         while (current !=null){
             LinkedListNode<Integer> next;
 
-            next=current.next;
-            current.next=prev;
+            next = current.next;
+            current.next = prev;
             result = Math.max(result,2*countCommon(prev,next)+1);
 
             result = Math.max(result,2*countCommon(current,next));
-            prev=current;
-            current=next;
+            prev = current;
+            current = next;
         }
         return result;
     }

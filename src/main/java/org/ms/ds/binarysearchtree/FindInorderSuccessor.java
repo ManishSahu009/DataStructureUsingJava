@@ -1,10 +1,10 @@
 package org.ms.ds.binarysearchtree;
 
 /*
-case 1: if the node "p" has the left subtree then
-jump to that left child and go to the right most node
-case 2: if the node "p" does not have the left subtree then
-search that node from the root anf the node from where we take the last right is the answer
+case 1: if the node "p" has the right subtree then
+jump to that right child and go to the left most node (node with least value)
+case 2: if the node "p" does not have the right subtree then
+search that node from the root and the node from where we take the last left is the answer
  */
 
 import org.ms.ds.binarytree.TreeNode;

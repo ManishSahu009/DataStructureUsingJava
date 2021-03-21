@@ -5,7 +5,7 @@ https://www.youtube.com/watch?v=Id-DdcWb5AU&list=PL_z_8CaSLPWeYfhtuKHj-9MpYb6XQJ
 find smallest element
 
  */
-public class FindElementInRotatedArray {
+public class FindElementInRotatedSortedArray {
 
     public static int findEleBS(int []arr, int ele,int s,int e){
         int start=s;

@@ -21,12 +21,10 @@ public class FlattenLinkedList {
         LinkedListNode<Integer> ptr=head;
         LinkedListNode<Integer> newHead=null;
         PriorityQueue<PairFLL> queue=new PriorityQueue<>(new PairFLLComparator());
-
         while(ptr!=null){
             queue.add(new PairFLL(ptr,ptr.data));
             ptr=ptr.next;
         }
-
         while (!queue.isEmpty()){
             LinkedListNode<Integer> temp=queue.poll().root;
             if (temp.down !=null){

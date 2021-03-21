@@ -8,7 +8,7 @@ public class StackUsingTwoQueue {
     Queue<Integer> queue1=new LinkedList<>();
     Queue<Integer> queue2=new LinkedList<>();
 
-    public void push(int value){
+    public void push(int value) {
         queue1.add(value);
     }
     public int pop(){

@@ -12,6 +12,7 @@ public class MaxSumSubarray {
         int maxEnding=0;
         for(Integer a : arr){
             maxEnding = maxEnding + a;
+            //a is deciding if be part of old family or start its own
             maxEnding=Integer.max(maxEnding,a);
             maxSum=Integer.max(maxSum,maxEnding);
         }
@@ -46,8 +47,7 @@ public class MaxSumSubarray {
 
     public static void main(String[] args) {
         int [] a = {-2, -3, 4, -1, -2, 1, 5, -3};
-        System.out.println("Max Sum Subarray is " +
-                maxSubArraySum(a));
+        System.out.println("Max Sum Subarray is " + maxSubArraySum(a));
         printMaxSubArraySum(a);
     }
 

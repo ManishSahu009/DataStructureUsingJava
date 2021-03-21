@@ -4,6 +4,10 @@ import java.util.Arrays;
 
 /*
 https://www.youtube.com/watch?v=h6_lIwZYHQw
+
+Leetcode : 135. Candy
+Each child must have at least one candy.
+Children with a higher rating get more candies than their neighbors.
  */
 public class CandyDistribution {
 

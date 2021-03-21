@@ -1,7 +1,18 @@
 package org.ms.ds.array;
 
 import java.util.Arrays;
+//Leetcode:189 :  Rotate Array
+/*  assume +ve k indicate right rotation
+    and -ve k indicate left rotation
+    note : if left rotation is required thn
+    left rotation+length = right rotation
+    means is 10 size array is given and 2 step left rotation is asked thn k=-2
+    you can make 8 step right rotation = -2+10 = 8
 
+    step 1: reverse from 0 to length-k
+    step 2: reverse length-k+1 to length
+    step 3: reverse full array
+* */
 public class RotateArrayByKSteps {
 
     public static void swap(int[] arr, int i, int j)
@@ -18,18 +29,18 @@ public class RotateArrayByKSteps {
         }
     }
 
-    public static void leftRotate(int[] arr, int r)
+    public static void rotate(int[] arr, int k)
     {
-        reverse(arr, 0, r - 1);
-        reverse(arr, r, arr.length - 1);
+        k=k%arr.length;
+        if(k<0){
+            k=k+arr.length;
+        }
+        //reverse first part
+        reverse(arr, 0, arr.length-k-1);
+        //reverse second part
+        reverse(arr, arr.length-k,arr.length - 1);
+        //reverse full array
         reverse(arr, 0, arr.length - 1);
-    }
-
-    public static void rightRotate(int[] A, int k, int n)
-    {
-        reverse(A, n - k, n - 1);
-        reverse(A, 0, n - k - 1);
-        reverse(A, 0, n - 1);
     }
 
 
@@ -38,9 +49,9 @@ public class RotateArrayByKSteps {
         int[] A = { 1, 2, 3, 4, 5, 6, 7 };
         int k = 3;
         System.out.println(Arrays.toString(A));
-        rightRotate(A, k, A.length);
+        rotate(A, k);
         System.out.println("rightRotate: "+Arrays.toString(A));
-        leftRotate(A,k);
+        rotate(A,-k); // negative
         System.out.println("leftRotate: "+Arrays.toString(A));
     }
 

@@ -14,8 +14,19 @@ public class DeleteAlternateNodeInLL {
         }
     }
 
-    public static LinkedListNode<Integer> deleteAlternateNode(LinkedListNode<Integer> head){
-        return null;
+    public static LinkedListNode<Integer> deleteAlternateNode(LinkedListNode<Integer> node){
+        if(node == null || node.next == null) {
+            return node;
+        }
+
+        LinkedListNode<Integer> head = node;
+
+        while(node != null && node.next != null) {
+            node.next = node.next.next;
+            node = node.next;
+        }
+
+        return head;
     }
 
     public static void main(String[] args) {
@@ -29,14 +40,8 @@ public class DeleteAlternateNodeInLL {
 
         printLinkedList(head);
         System.out.println();
-
-        LinkedListNode<Integer> head1 = new LinkedListNode<>(12);
-        head1.next = new LinkedListNode<>(99);
-        head1.next.next = new LinkedListNode<>(8);
-        head1.next.next.next = new LinkedListNode<>(37);
-        head1.next.next.next.next = new LinkedListNode<>(5);
-
-        printLinkedList(head1);
+        deleteAlternateNode(head);
+        printLinkedList(head);
         System.out.println();
 
 

@@ -1,7 +1,13 @@
 package org.ms.ds.binarysearchtree;
 
 import org.ms.ds.binarytree.TreeNode;
+/*
+case 1 : if a node P has left subtree then jump to that left child node and
+go to right most node(max value in left tree)
+case 2 : if a node does not have left subtree then search that node from root and the node from where
+we took last right
 
+ */
 public class FindInorderPredecessor {
 
     public static TreeNode<Integer> insert(TreeNode<Integer> root, int key)

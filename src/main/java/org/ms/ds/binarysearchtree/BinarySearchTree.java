@@ -1,9 +1,11 @@
-package org.ms.ds.binarytree;
+package org.ms.ds.binarysearchtree;
+
+import org.ms.ds.binarytree.TreeNode;
 
 public class BinarySearchTree {
 
 
-    public void searchRecursoin(TreeNode<Integer> root, int key, TreeNode<Integer> parent) {
+    public void searchRecursion(TreeNode<Integer> root, int key, TreeNode<Integer> parent) {
         if (root == null) {
             System.out.println("Key not found..");
         }
@@ -21,9 +23,9 @@ public class BinarySearchTree {
             return;
         }
         if (key < root.data) {
-            searchRecursoin(root.left, key, root);
+            searchRecursion(root.left, key, root);
         } else {
-            searchRecursoin(root.right, key, root);
+            searchRecursion(root.right, key, root);
         }
     }
 
@@ -151,7 +153,6 @@ public class BinarySearchTree {
                         parent.right = child;
                     }
                 }
-
                 // if node to be deleted is root node, then set the root to child
                 else {
                     root = child;
@@ -177,13 +178,13 @@ public class BinarySearchTree {
         return temp;
     }
 
-    public void inorderTraversalRecusion(TreeNode<Integer> root) {
+    public void inorderTraversalRecursion(TreeNode<Integer> root) {
         if (root == null) {
             return;
         }
-        inorderTraversalRecusion(root.left);
+        inorderTraversalRecursion(root.left);
         System.out.print(root.data + " ");
-        inorderTraversalRecusion(root.right);
+        inorderTraversalRecursion(root.right);
     }
 
 
@@ -195,17 +196,17 @@ public class BinarySearchTree {
         for (int key : keys) {
             root = binarySearchTree.insertIterative(root, key);
         }
-        binarySearchTree.inorderTraversalRecusion(root);
+        binarySearchTree.inorderTraversalRecursion(root);
         binarySearchTree.deleteRecursion(root, 18);
         System.out.println();
-        binarySearchTree.inorderTraversalRecusion(root);
+        binarySearchTree.inorderTraversalRecursion(root);
         root = binarySearchTree.insertRecursion(root, 19);
         System.out.println();
-        binarySearchTree.inorderTraversalRecusion(root);
+        binarySearchTree.inorderTraversalRecursion(root);
         //binarySearchTree.deleteIterative(root,19);
-        binarySearchTree.searchRecursoin(root, 10, null);
+        binarySearchTree.searchRecursion(root, 10, null);
         System.out.println();
-        binarySearchTree.inorderTraversalRecusion(root);
+        binarySearchTree.inorderTraversalRecursion(root);
     }
 
 }

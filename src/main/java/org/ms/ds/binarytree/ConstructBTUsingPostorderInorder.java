@@ -64,7 +64,7 @@ public class ConstructBTUsingPostorderInorder {
         for(int i=0;i< inorder.length;i++){
             map.put(inorder[i],i);
         }
-        // pIndex stores index of next unprocessed node in preorder sequence
+        // pIndex stores index of next unprocessed node in postorder sequence
         // start with root node (present at 0'th index)
         AtomicInteger postIndex=new AtomicInteger(postorder.length-1);
         return construct(0,inorder.length-1,postorder,postIndex,map);

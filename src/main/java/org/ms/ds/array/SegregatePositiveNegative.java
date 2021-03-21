@@ -7,11 +7,12 @@ import java.util.Arrays;
 https://www.techiedelight.com/positive-and-negative-integers-segregate/
  */
 
-public class SegregatePsitiveNegative {
+public class SegregatePositiveNegative {
 
     public static void partition(int[] a, int start, int end)
     {
         int pIndex = start;
+        //pindex and i will go togather till positive once -ve comes pindex will not move untill swap
         for (int i = start; i <= end; i++)
         {
             if (a[i] < 0)   // pivot is 0

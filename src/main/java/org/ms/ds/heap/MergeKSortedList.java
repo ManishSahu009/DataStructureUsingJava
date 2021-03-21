@@ -29,10 +29,7 @@ public class MergeKSortedList {
                  min.value=list.get(min.listNum).get(min.index);
                  queue.add(min);
             }
-
         }
-
-
     }
 
     public static void main(String[] args)

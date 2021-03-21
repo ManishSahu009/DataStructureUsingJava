@@ -7,9 +7,7 @@ public class MergingOverlappingIntervals {
     public static void mergeIntervals(List<Interval> intervals)
     {
         Collections.sort(intervals, Comparator.comparingInt(a -> a.begin));
-
         Stack<Interval> stack = new Stack<>();
-
         for (Interval curr: intervals)
         {
             if (stack.empty() || curr.begin > stack.peek().end) {

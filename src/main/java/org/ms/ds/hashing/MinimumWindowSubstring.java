@@ -3,8 +3,13 @@ package org.ms.ds.hashing;
 import java.util.HashMap;
 
 /*
+sheet code : LB92
 https://www.geeksforgeeks.org/find-the-smallest-window-in-a-string-containing-all-characters-of-another-string/
+smallest-substring-of-a-string-containing-all-characters-of-another-string
 
+1 : copy target substring in hashmap with ele and value as count
+2: keep acquiring  ele and count until all found
+3: keep release ele from start posotion and decrease
  */
 public class MinimumWindowSubstring {
 

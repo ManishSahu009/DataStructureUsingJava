@@ -1,6 +1,8 @@
 package org.ms.ds.binarytree;
 
 
+import org.ms.ds.binarysearchtree.BinarySearchTree;
+
 /* Construct below tree
 	          1
 	        /   \
@@ -39,10 +41,10 @@ public class ConvertBinaryTreeToMirror {
         root.left.right = new TreeNode<>(5);
         root.right.left = new TreeNode<>(6);
         root.right.right = new TreeNode<>(7);
-        binarySearchTree.inorderTraversalRecusion(root);
+        binarySearchTree.inorderTraversalRecursion(root);
         convertToMirror(root);
         System.out.println();
-        binarySearchTree.inorderTraversalRecusion(root);
+        binarySearchTree.inorderTraversalRecursion(root);
     }
 
 
