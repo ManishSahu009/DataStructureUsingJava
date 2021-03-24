@@ -7,10 +7,8 @@ public class PrintEvenOdd {
         NumberGenerator2 numberGenerator=new NumberGenerator2(20,2);
         Thread thread1= new Thread(new SequenceGeneratorTask2(numberGenerator, 1),"thread-1");
         Thread thread2= new Thread(new SequenceGeneratorTask2(numberGenerator, 0),"thread-2");
-
         thread1.start();
         thread2.start();
-
     }
 
 }
