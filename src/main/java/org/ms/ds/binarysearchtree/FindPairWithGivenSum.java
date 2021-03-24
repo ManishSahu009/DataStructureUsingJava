@@ -11,9 +11,8 @@ public class FindPairWithGivenSum {
         if (root ==null) {
             return false;
         }
-        if(findPair(root.left,sum,map)){
-           return true;
-        }
+        findPair(root.left,sum,map);
+
         if(map.containsKey(root.data)){
             System.out.println((sum-root.data) +" - "+ root.data);
             return true;
